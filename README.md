@@ -67,6 +67,7 @@ datafun-05-sql-project/
 ├─ requirements.txt
 ├─ README.md
 ├─ project.sqlite3
+├─ project_eda.ipynb
 ├─ sql_create/
 │  ├─ 01_drop_tables.sql
 │  ├─ 02_create_tables.sql
@@ -318,7 +319,11 @@ A statement is unfinished (missing `)`, `;`, or text got truncated). Ensure ever
 * **Python** runs in the **Python interpreter** (scripts or notebooks). From a shell you call `python script.py`.
 * **Git** commands run in terminal shells (PowerShell/Bash/zsh).
 
+---
 
+## License
+
+MIT (or your course default). Add a `LICENSE` file if required.
 
 ---
 
@@ -327,3 +332,85 @@ A statement is unfinished (missing `)`, `;`, or text got truncated). Ensure ever
 * Course specification: `datafun-05-spec` (project requirements)
 * Python `sqlite3`, SQLite, pandas
 * VS Code + SQLite extensions
+
+---
+
+## Exploratory Data Analysis (EDA) Notebook
+
+**File:** `project_eda.ipynb` (at the repo root)
+
+This notebook fulfills **Step 3: Plan the Project / Gather Data** with a guided EDA for the 1→Many schema (**authors → books**). It includes:
+
+* Imports and a reliable **DB connection** to `project.sqlite3`
+* **Preview** of `authors` and `books` tables
+* **Data quality checks** (dtypes, missing values, duplicate PKs)
+* **Join** to verify the 1→Many relationship
+* **Aggregations** (counts per author, min/max/avg publication year)
+* (Optional) a simple chart of books per author
+
+### How to run the notebook
+
+1. Ensure the database exists (run from the repo root):
+
+   ```bash
+   python db01_setup.py
+   ```
+2. Open **`project_eda.ipynb`** in VS Code and select the **.venv** Python kernel.
+3. If your notebook is not in the repo root, set the working directory first (Windows example):
+
+   ```python
+   import os, pathlib
+   os.chdir(r"C:\Repos\datafun-05-sql-project")
+   print("CWD:", os.getcwd(), "| DB exists:", pathlib.Path("project.sqlite3").exists())
+   ```
+4. Run the cells in order. Add a few notes in the final *Findings* cell.
+
+### Troubleshooting (EDA)
+
+* **`no such table: authors`** → Run `db01_setup.py` and/or ensure the notebook points to the correct DB path (see step 3 above).
+* **Viewer not updating** → Refresh/close–reopen the SQLite view.
+* **Kernel mismatch** → Select the **.venv** interpreter for the notebook.
+
+---
+
+## Step 3 — Plan the Project / Gather Data (EDA)
+
+**Goal.** Complete a guided **Exploratory Data Analysis (EDA)** for the 1→Many schema (**authors → books**) so you understand structure, quality, and relationships before deeper analysis.
+
+**Where.** Use the notebook **[`project_eda.ipynb`](https://github.com/Aboudlal/datafun-05-sql-project/blob/main/project_eda.ipynb)** at the repo root.
+
+**What to include.**
+
+* Imports and a reliable connection to **`project.sqlite3`**
+* Preview of `authors` and `books` (head/info)
+* Data‑quality checks (dtypes, missing values, duplicate PKs)
+* A **JOIN** to verify the 1→Many relationship
+* Aggregations (e.g., books per author; min/max/avg publication year)
+* 2–4 short **findings** in Markdown; optional simple chart
+
+**How to run.**
+
+1. Build (or rebuild) the DB:
+
+   ```bash
+   python db01_setup.py
+   ```
+2. Open `project_eda.ipynb` in VS Code and select the **.venv** kernel.
+3. If the notebook starts in the wrong folder, set the working directory (Windows example):
+
+   ```python
+   import os, pathlib
+   os.chdir(r"C:\Repos\datafun-05-sql-project")
+   print("CWD:", os.getcwd(), "| DB exists:", pathlib.Path("project.sqlite3").exists())
+   ```
+4. Run cells in order and add your notes in the *Findings* section.
+
+**Custom option.** Instead of authors/books, you may choose **any 1→Many** pair (e.g., directors/movies, teams/players). Keep ≥10 rows per table and update the SQL create/insert scripts before rerunning `db01_setup.py`.
+
+**Recent example update.** Added **Yasmina Khadra — *Ce que le jour doit à la nuit* (2008)**. After applying feature scripts and rerunning the notebook, the time span now covers **1942 → 2008** and the chart includes the new author.
+
+**Troubleshooting (Step 3).**
+
+* `no such table: authors` → run `db01_setup.py` and ensure the notebook points to the correct DB path.
+* Viewer not updating → refresh/close–reopen the SQLite view.
+* Kernel mismatch → select the **.venv** interpreter for the notebook.
