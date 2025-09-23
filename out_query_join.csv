@@ -1,11 +1,11 @@
-book_id,title,year_published,author_name,country
-b3,Half of a Yellow Sun,2006,Chimamanda Ngozi Adichie,Nigeria
-b2,Kafka on the Shore,2002,Haruki Murakami,Japan
-b8,Harry Potter and the Philosopher's Stone,1997,J.K. Rowling,UK
-b1,Beloved,1987,Toni Morrison,USA
-b5,The Handmaid's Tale,1985,Margaret Atwood,Canada
-b9,The House of the Spirits,1982,Isabel Allende,Chile
-b4,One Hundred Years of Solitude,1967,Gabriel García Márquez,Colombia
-b6,1984,1949,George Orwell,UK
-b7,Animal Farm,1945,George Orwell,UK
-b10,The Stranger,1942,Albert Camus,France
+book_id,title,year_published,author_name,country,author_id
+b1,Ce que le jour doit à la nuit,2008,Yasmina Khadra,Algeria,a1
+b3,Half of a Yellow Sun,2006,Chimamanda Ngozi Adichie,Nigeria,a3
+b2,Kafka on the Shore,2002,Haruki Murakami,Japan,a2
+b8,Harry Potter and the Philosopher's Stone,1997,J.K. Rowling,UK,a7
+b5,The Handmaid's Tale,1985,Margaret Atwood,Canada,a5
+b9,The House of the Spirits,1982,Isabel Allende,Chile,a8
+b4,One Hundred Years of Solitude,1967,Gabriel García Márquez,Colombia,a4
+b6,1984,1949,George Orwell,UK,a6
+b7,Animal Farm,1945,George Orwell,UK,a6
+b10,The Stranger,1942,Albert Camus,France,a9
