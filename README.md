@@ -414,3 +414,16 @@ This notebook fulfills **Step 3: Plan the Project / Gather Data** with a guided 
 * `no such table: authors` → run `db01_setup.py` and ensure the notebook points to the correct DB path.
 * Viewer not updating → refresh/close–reopen the SQLite view.
 * Kernel mismatch → select the **.venv** interpreter for the notebook.
+## Screenshots (Verification)
+
+1. **db01_setup.py — Database initialized**  
+   Shows the run order (`01_drop_tables.sql` → `02_create_tables.sql` → `03_insert_records.sql`) and the “✔ Database initialized: project.sqlite3” message.  
+   ![Setup output](images/01_setup.png)
+
+2. **db02_features.py — Updates/Deletes applied**  
+   Confirms feature scripts executed (e.g., title/year fix, delete row) with success output.  
+   ![Features output](images/02_features.png)
+
+3. **db03_queries.py — Joins/Aggregations/CSVs**  
+   Displays join/group-by results and “Saved: out_*.csv” lines to verify analytics queries.  
+   ![Queries output](images/03_queries.png)
